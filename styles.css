@@ -1,0 +1,193 @@
+:root {
+    --font-serif: 'Times', serif;
+    --font-sans: 'Helvetica Neue', sans-serif;
+    --light-gray: hsl(210, 13%, 64%);
+    --lighter-gray: hsl(211, 16%, 34%);
+    --dark-gray: hsl(212, 19%, 20%);
+    --darker-gray: rgb(19, 22, 25);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark-gray);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #29323c, #485563);
+    background: linear-gradient(to bottom, #29323c 60%, #485563 100%);
+    color: var(--light-gray);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 300;
+    min-height: 100vh;
+}
+
+body > * {
+    margin: 0 auto;
+}
+
+li { list-style: none; }
+
+.app-header {
+    width: 100%;
+}
+.search-form,
+.suggestions {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+    .search-form,
+    .suggestions {
+        width: 50%;
+        max-width: 680px;
+    }
+}
+
+/* ========================= */
+/*          HEADER           */
+/* ========================= */
+.app-header {
+    padding: 1.2em;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-header img {
+    width: 3.5em;
+    margin: .7em;
+}
+.app-header span {
+    font-family: var(--font-serif);
+    font-size: 3.5em;
+    color: rgba(255, 255, 255, .7);
+}
+
+/* ========================= */
+/*          SEARCH           */
+/* ========================= */
+.search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box { position: relative; }
+
+.search-box .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-gray);
+    margin-left: 1em;
+    font-size: 1.2em;
+}
+
+.search-box .icon svg { color: var(--light-gray); }
+
+.search-box input#search {
+    -webkit-appearance: textfield;
+    background-color: rgba(19, 22, 25, .4);
+    border: none;
+    border-radius: 5px;
+    color: var(--light-gray);
+    font-size: 1.4em;
+    width: 100%;
+    padding: .6em 1.4em .6em 2.4em;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.search-form input#search::-webkit-input-placeholder { color: var(--light-gray); font-style: italic; }
+.search-form input#search::-moz-placeholder { color: var(--light-gray); }
+.search-form input#search:-moz-placeholder { color: var(--light-gray); }
+.search-form input#search::-ms-input-placeholder { color: var(--light-gray); }
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--light-gray);
+    border-radius: 5px;
+    color: var(--light-gray);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400;
+    padding: .6em 1.2em;
+    text-transform: capitalize;
+}
+.btn:hover {
+    color: var(--lighter-gray);
+    border-color: var(--lighter-gray);
+}
+
+/* ========================= */
+/*      SUGGESTIONS LIST     */
+/* ========================= */
+.suggestions {
+    margin: 1em auto 2em;
+}
+.suggestions li {
+    background-color: #fff;
+    color: var(--dark-gray);
+    margin-bottom: .4em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+.suggestions li article {
+    padding: 1em;
+    width: 100%;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.suggestions li footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: orange;
+    width: 100%;
+    height: 3px;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.suggestions li:hover footer {
+    height: 30px;
+}
+
+.suggestions li article p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.suggestions li footer a {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-decoration: none;
+    font-size: .9em;
+    font-weight: 400;
+    text-transform: capitalize;
+    display: none;
+}
+
+.suggestions li:hover footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

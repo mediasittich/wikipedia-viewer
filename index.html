@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wikipedia Viewer</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <img src="./wiki-puzzle.svg" alt="Wikipedia Logo">
+        <span>WikiViewer</span>
+    </header>
+    
+    <form class="search-form">
+        <div class="search-box">
+            <span class="icon">
+                <i class="fas fa-search"></i>
+            </span>
+            <input type="search" id="search" onfocus="this.value=''" placeholder="Search...">
+        </div>
+        
+        <div class="button-box">
+            <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" class="btn">Show me a random article</a>
+        </div>
+    </form>
+    
+    <ul class="suggestions" id="suggestions"></ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>
